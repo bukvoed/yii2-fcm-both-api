@@ -103,6 +103,20 @@ class MessageOptionsBuilder implements OptionsBuilder
         ];
     }
 
+    public function setNotificationWithImage(string $title, string $body, string $image)
+    {
+        $this->notification = [
+            'title' => $title,
+            'body' => $body,
+            'image' => $image,
+        ];
+    }
+
+    public function setImage(string $url)
+    {
+        $this->notification['image'] = $url;
+    }
+
     /**
      * @param array $config
      */

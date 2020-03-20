@@ -93,6 +93,32 @@ class ApiV1Request extends AbstractRequest implements Request
     }
 
     /**
+     * @param string $title
+     * @param string $body
+     * @param string $image
+     *
+     * @return self
+     */
+    public function setNotificationWithImage(string $title, string $body, string $image): Request
+    {
+        $this->getOptionBuilder()->setNotification($title, $body, $image);
+
+        return $this;
+    }
+
+    /**
+     * @param string $url
+     *
+     * @return self
+     */
+    public function setImage(string $url): Request
+    {
+        $this->getOptionBuilder()->setImage($url);
+
+        return $this;
+    }
+
+    /**
      * @param array $config
      *
      * @return self
